@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>ICIMSP 2027 - Data Analysis Quiz | OUTR Student Assessment</title>
+  <title>DAP Quiz 2026 - Data Analysis using Python | OUTR Assessment</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -13,15 +13,13 @@
       box-sizing: border-box;
     }
 
-    /* LIGHT BLUE / WHITE BACKGROUND THEME */
     body {
-      background: #f0f8ff;  /* AliceBlue / light sky background */
+      background: #f0f8ff;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
       color: #1e293b;
       line-height: 1.5;
     }
 
-    /* Header styling with OUTR logo */
     header {
       background: white;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -39,21 +37,12 @@
       gap: 1.2rem;
     }
 
-    /* actual image logo styling - using outr-logo.png */
     .logo-left img, .logo-right img {
       max-height: 75px;
       width: auto;
       object-fit: contain;
     }
-    
-    /* fallback text style in case image fails to load */
-    .logo-left {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 4px 8px;
-      transition: all 0.2s;
-    }
-    
+
     .header-center {
       text-align: center;
     }
@@ -77,7 +66,6 @@
       padding: 0 20px;
     }
 
-    /* Main quiz card - light theme */
     .quiz-section-wrapper {
       background: #ffffff;
       border-radius: 2rem;
@@ -286,24 +274,6 @@
       background: #fff;
     }
 
-    /* instructions block */
-    .guide-box {
-      background: #fefce8;
-      border-left: 5px solid #3b82f6;
-      padding: 1rem 1.5rem;
-      border-radius: 1rem;
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: #2c3e66;
-    }
-
-    .guide-box code {
-      background: #e2e8f0;
-      padding: 2px 6px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-    }
-
     @media (max-width: 700px) {
       .quiz-section-wrapper { padding: 1rem; }
       .question-text { font-size: 1.1rem; }
@@ -317,15 +287,13 @@
 <header>
   <div class="header-inner">
     <div class="logo-left">
-      <!-- REPLACED with actual outr-logo.png as requested -->
-      <img src="outr-logo.png" alt="OUTR Official Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#1e3a8a; padding:8px 16px; border-radius:12px; color:white; font-weight:bold;\'>OUTR<span style=\'font-size:12px; margin-left:5px;\'>Bhubaneswar</span></div>'">
+      <img src="outr-logo.png" alt="OUTR Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#1e3a8a; padding:8px 16px; border-radius:12px; color:white; font-weight:bold;\'>OUTR<span style=\'font-size:12px; margin-left:5px;\'>Bhubaneswar</span></div>'">
     </div>
     <div class="header-center">
       <p>School of Electronic Sciences</p>
       <p>Odisha University of Technology and Research, Bhubaneswar, Odisha</p>
     </div>
     <div class="logo-right">
-      <!-- Accent logo for DAP / ICIMSP branding (optional) -->
       <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'%3E%3Crect width='100' height='70' fill='%230f3b5c' rx='10'/%3E%3Ctext x='50' y='43' font-size='24' text-anchor='middle' fill='white' font-weight='bold'%3EDAP%3C/text%3E%3C/svg%3E" alt="DAP logo">
     </div>
   </div>
@@ -414,13 +382,16 @@
   const TOTAL_QS = 20;
   const MAX_MARKS = 10;
 
+  // ==================== GOOGLE APPS SCRIPT URL (YOUR DEPLOYED WEB APP) ====================
+  const SHEET_API = "https://script.google.com/a/macros/outr.ac.in/s/AKfycbyYn6v-YPDqGPl9dJXNnXB0cNf3K4A6utcnXgx9OvLJCyriR2ZoxmNkZbnV4DAhMOkC/exec";
+
   // state variables
   let student = { name: "", regNo: "", branch: "", year: "", email: "" };
   let answers = new Array(TOTAL_QS).fill(null);
   let currentIdx = 0;
   let quizActive = false;
   let submitted = false;
-  let globalSeconds = 15 * 60;   // 15 minutes
+  let globalSeconds = 15 * 60;
   let globalTimerInterval = null;
 
   // DOM references
@@ -446,10 +417,6 @@
   const finalScoreSpan = document.getElementById('finalScoreSpan');
   const resultMsg = document.getElementById('resultDetailsMsg');
   const restartBtn = document.getElementById('restartQuizGlobal');
-
-  // ---------- Google Apps Script Web App URL (Replace with your own deployed URL) ----------
-  // INSTRUCTION: Create a Google Apps Script, set web app to execute as "Me", and copy URL below.
-  const SHEET_API = "https://script.google.com/macros/s/AKfycbzXTLbirdCmuS5YQyOoF0xZQKd_8DvWQ_Tq0fiHUg96o_gaPnNRmJZbw8QrNRf8S87U/exec";  // <-- REPLACE WITH YOUR SCRIPT URL
 
   function formatTime(sec) {
     let m = Math.floor(sec / 60);
@@ -534,7 +501,6 @@
     finalScoreSpan.innerText = `${correctCount}/20 (${marksObtained}/${MAX_MARKS} marks)`;
     resultMsg.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> Saving to Google Sheet...`;
     try {
-      // Using fetch with mode 'no-cors' to avoid CORS limitations, but note that actual response may be opaque
       await fetch(SHEET_API, { method: 'POST', mode: 'no-cors', cache: 'no-cache', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       resultMsg.innerHTML = `✅ Recorded! Score: ${correctCount}/20 (${marksObtained}/10). Thank you, ${student.name}. Data saved in Google Sheet.`;
     } catch(e) {
