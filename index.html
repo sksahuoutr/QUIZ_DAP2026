@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>DAP Quiz 2026 - Data Analysis using Python | OUTR Assessment</title>
+  <title>ICIMSP 2027 - Data Analysis Quiz | OUTR Student Assessment</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -42,7 +42,7 @@
       width: auto;
       object-fit: contain;
     }
-
+    
     .header-center {
       text-align: center;
     }
@@ -157,12 +157,6 @@
       color: #1e3a8a;
     }
 
-    .timer-box span, .q-counter span {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #3b6cb0;
-    }
-
     .question-text {
       font-size: 1.3rem;
       font-weight: 600;
@@ -274,6 +268,16 @@
       background: #fff;
     }
 
+    .guide-box {
+      background: #fefce8;
+      border-left: 5px solid #3b82f6;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #2c3e66;
+    }
+
     @media (max-width: 700px) {
       .quiz-section-wrapper { padding: 1rem; }
       .question-text { font-size: 1.1rem; }
@@ -287,7 +291,7 @@
 <header>
   <div class="header-inner">
     <div class="logo-left">
-      <img src="outr-logo.png" alt="OUTR Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#1e3a8a; padding:8px 16px; border-radius:12px; color:white; font-weight:bold;\'>OUTR<span style=\'font-size:12px; margin-left:5px;\'>Bhubaneswar</span></div>'">
+      <img src="outr-logo.png" alt="OUTR Official Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'background:#1e3a8a; padding:8px 16px; border-radius:12px; color:white; font-weight:bold;\'>OUTR<span style=\'font-size:12px; margin-left:5px;\'>Bhubaneswar</span></div>'">
     </div>
     <div class="header-center">
       <p>School of Electronic Sciences</p>
@@ -303,7 +307,7 @@
   <div class="container">
     <div class="quiz-section-wrapper">
       <h2 style="text-align:center; margin-bottom:0.25rem; color:#0c4a6e;">📊 Data Analysis using Python – Certification Quiz</h2>
-      <p style="text-align:center; color:#2c5282; margin-bottom:1.8rem;">🎓 20 compulsory questions | 0.5 mark each → Total 10 marks | ⏱️ 15 minutes total</p>
+      <p style="text-align:center; color:#2c5282; margin-bottom:1.8rem;">🎓 20 Random Questions from Question Bank | 0.5 mark each → Total 10 marks | ⏱️ 15 minutes total</p>
 
       <!-- REGISTRATION PANEL -->
       <div id="registerPanel" class="quiz-card">
@@ -315,10 +319,10 @@
           <div class="input-group"><label><i class="fas fa-code-branch"></i> Branch *</label><input type="text" id="branch" placeholder="CSE / ECE / EEE / IT"></div>
           <div class="input-group"><label><i class="fas fa-calendar-alt"></i> Year *</label><select id="yearSelect"><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>PG</option></select></div>
         </div>
-        <div class="input-group"><label><i class="fas fa-envelope"></i> College Email *</label><input type="email" id="studentEmail" placeholder="student@outr.ac.in"></div>
-        <button id="startQuizBtn" class="btn-start-quiz"><i class="fas fa-hourglass-half"></i> Start Quiz (15 MINUTES TIMER)</button>
+        <div class="input-group"><label><i class="fas fa-envelope"></i> University Email(Gmail/OUTR/Others) *</label><input type="email" id="studentEmail" placeholder="student@outr.ac.in"></div>
+        <button id="startQuizBtn" class="btn-start-quiz"><i class="fas fa-hourglass-half"></i> Start Quiz (RANDOM 20 QUESTIONS)</button>
         <div id="registerError" class="error-msg"></div>
-        <div style="margin-top:1rem; font-size:0.75rem; text-align:center; color:#4a627a;">✅ All questions mandatory – Responses automatically saved to Google Sheet</div>
+        <div style="margin-top:1rem; font-size:0.75rem; text-align:center; color:#4a627a;">✅ Each student gets a unique random set of 20 questions from 50 master questions. Responses saved to Google Sheet.</div>
       </div>
 
       <!-- QUIZ PANEL -->
@@ -352,42 +356,79 @@
 </main>
 
 <footer>
-  <p>© OUTR, Bhubaneswar | School of Electronic Sciences | Data Analysis Quiz (10 Marks) | Google Sheets Integration</p>
+  <p>© OUTR, Bhubaneswar | School of Electronic Sciences | Data Analysis using Phthon (10 Marks) | Quiz Questions | © Sushanta Sahu</p>
 </footer>
 
 <script>
-  // ======================= 20 QUESTIONS (Data Analysis using Python) =======================
-  const QUIZ_SET = [
-    { text: "A dataset contains customer IDs, transaction timestamps, product categories, and monthly spending values. Which pair correctly identifies the variables that are most appropriate for time-series decomposition and categorical association analysis respectively?", options: ["Product category & transaction timestamp", "Monthly spending & product category", "Transaction timestamp & customer ID", "Monthly spending & transaction timestamp"], correct: 1 },
-    { text: "A distribution has mean = 48, median = 41, mode = 32, and kurtosis = 7.2. Which interpretation is MOST statistically appropriate?", options: ["Symmetric and platykurtic distribution", "Negatively skewed with light tails", "Positively skewed with heavy tails", "Uniform distribution with no outliers"], correct: 2 },
-    { text: "A data scientist observes that increasing sample size decreases variance but simultaneously increases the probability of collecting noisy observations. This trade-off is BEST associated with:", options: ["Data quantity versus data quality", "Bias correction theorem", "Central limit inconsistency", "Entropy minimization"], correct: 0 },
-    { text: "Two variables have covariance equal to 0 but exhibit a strong circular relationship. Which statement is TRUE?", options: ["The variables are statistically independent", "Pearson correlation fully captures the dependency", "Covariance fails to detect nonlinear relationships", "Variance of both variables must be equal"], correct: 2 },
-    { text: "A random variable X follows a distribution where: P(X=x)=k(x+1), x=0,1,2,3. What is the value of k?", options: ["1/8", "1/10", "1/12", "1/16"], correct: 1 },
-    { text: "In z-score normalization, a transformed observation equals −2.5. Which interpretation is MOST accurate?", options: ["The observation is 2.5 units below the minimum value", "The observation lies 2.5 standard deviations below the mean", "The observation belongs to the lower 2.5% quantile", "The observation is an outlier by definition"], correct: 1 },
-    { text: "Which scenario BEST justifies using entropy instead of variance for data analysis?", options: ["Measuring spread in continuous Gaussian data", "Quantifying uncertainty in categorical outcomes", "Detecting linear dependency between variables", "Forecasting seasonal demand fluctuations"], correct: 1 },
-    { text: "A dataset undergoes min-max normalization. Which statement remains invariant after transformation?", options: ["Standard deviation", "Euclidean distance", "Relative ordering of observations", "Mean equal to zero"], correct: 2 },
-    { text: "During outlier analysis, Cook’s distance identifies one observation with extremely high influence despite moderate residual error. This primarily suggests:", options: ["High leverage point affecting model estimation", "Strong multicollinearity", "Heteroscedasticity in residuals", "Data normalization failure"], correct: 0 },
-    { text: "In exponential smoothing, assigning a smoothing constant close to 1 implies:", options: ["Historical observations dominate the forecast", "Recent observations receive stronger weight", "Trend and seasonality are removed automatically", "Forecast variance becomes zero"], correct: 1 },
-    { text: "Which visualization technique is MOST suitable for detecting multimodality in a univariate continuous distribution while preserving density structure?", options: ["Pie chart", "Stem-and-leaf plot", "Density estimator plot", "Strip chart"], correct: 2 },
-    { text: "A QQ plot comparing sample data against a normal distribution shows an S-shaped deviation. This MOST likely indicates:", options: ["Perfect normality", "Heavy-tailed distribution", "Absence of skewness", "Constant variance assumption"], correct: 1 },
-    { text: "A bubble plot differs fundamentally from a scatterplot because it additionally represents:", options: ["Categorical frequencies", "Temporal ordering", "A third quantitative variable through marker size", "Probability density contours"], correct: 2 },
-    { text: "Which graphical method is MOST appropriate for simultaneously examining pairwise correlation intensity among dozens of variables?", options: ["Multiple boxplots", "Heatmap", "Pie chart", "Quantile plot"], correct: 1 },
-    { text: "A statistician estimates a population parameter using maximum likelihood estimation (MLE). Under regularity conditions and large sample size, the estimator is asymptotically:", options: ["Biased and inconsistent", "Efficient and normally distributed", "Uniformly distributed", "Independent of sample size"], correct: 1 },
-    { text: "Consider testing: H0: μ=50 vs H1: μ≠50. The population variance is unknown and sample size is 12. Which test is MOST appropriate?", options: ["Z-test", "Chi-square test", "Paired proportion test", "t-test"], correct: 3 },
-    { text: "In hypothesis testing, reducing Type I error probability generally causes:", options: ["Simultaneous decrease in Type II error", "Increase in statistical power", "Increase in Type II error if sample size is fixed", "Elimination of sampling variability"], correct: 2 },
-    { text: "A chi-square goodness-of-fit test becomes unreliable primarily when:", options: ["Expected frequencies are too small", "Variance is unknown", "Data are continuous", "Correlation exists between variables"], correct: 0 },
-    { text: "Which statement BEST distinguishes statistical modeling from descriptive analytics?", options: ["Descriptive analytics always predicts future outcomes", "Statistical modeling focuses on inference and relationships beyond observed data", "Statistical modeling ignores probability distributions", "Descriptive analytics requires hypothesis testing"], correct: 1 },
-    { text: "A time-series forecast generated using a 3-period moving average suddenly lags behind a rapidly increasing trend. The MAIN reason is that:", options: ["Moving averages overreact to noise", "The method inherently introduces smoothing delay", "Exponential smoothing was incorrectly normalized", "The variance of the series becomes negative"], correct: 1 }
+  // ======================= MASTER QUESTION BANK (50 questions from provided document) =======================
+  const MASTER_QUIZ_SET = [
+    { text: "What is a strip chart and when is it used?", options: ["A chart for showing cumulative probabilities", "A plot showing individual data points along an axis, used for small datasets to see distribution", "A chart for time series decomposition", "A density estimation method"], correct: 1 },
+    { text: "Which type of data is best suited for a dot plot?", options: ["Large continuous datasets", "Small to moderate-sized datasets with individual values", "Multivariate categorical data", "Only time series data"], correct: 1 },
+    { text: "Define a boxplot and explain its components (quartiles, median, outliers). Which is NOT standard?", options: ["Median", "First quartile (Q1)", "Mean", "Outliers"], correct: 2 },
+    { text: "Differentiate between a histogram and a bar chart.", options: ["Bar charts show distribution of continuous data; histograms show categorical frequencies", "Histograms show frequency of continuous data with no gaps; bar charts compare categorical data", "There is no difference", "Histograms use pie slices; bar charts use lines"], correct: 1 },
+    { text: "What is bin width and how does it affect a histogram?", options: ["The height of each bar; it affects the mean", "The interval size of each bin; too wide hides detail, too narrow creates noise", "The color of the bars", "The gap between bars"], correct: 1 },
+    { text: "Define density estimation and kernel density estimation (KDE).", options: ["Estimating probabilities from a bar chart", "A smooth estimate of the probability density function; KDE uses a kernel function to smooth observations", "Counting outliers", "Estimating the mean only"], correct: 1 },
+    { text: "What are quantiles and what does a quantile plot represent?", options: ["The sum of all values", "Values dividing a dataset into equal-sized intervals; quantile plot shows these against theoretical distribution", "The variance of the data", "The mode"], correct: 1 },
+    { text: "What is skewness and how is it identified graphically?", options: ["Symmetry of a distribution; right-skew has longer left tail", "Measure of asymmetry; right-skew has longer right tail, left-skew has longer left tail", "Only measured numerically", "The flatness of a distribution"], correct: 1 },
+    { text: "What is a stem-and-leaf plot and its purpose?", options: ["To show time trends", "To display data values while preserving original numbers and showing distribution shape", "To calculate correlation", "To show only categorical data"], correct: 1 },
+    { text: "When should pie charts and bar charts be used?", options: ["Pie charts for any data; bar charts only for time series", "Pie charts for parts of a whole with few categories; bar charts for comparing many categories", "Never use pie charts", "Pie charts for continuous data"], correct: 1 },
+    { text: "What is a grouped bar chart?", options: ["A single bar showing total", "Multiple bars per category to compare subgroups side by side", "A stacked area chart", "A time series plot"], correct: 1 },
+    { text: "What insights do multiple boxplots provide?", options: ["Comparison of distributions across multiple groups (median, spread, outliers)", "Exact data points", "Correlation between variables", "Prediction intervals"], correct: 0 },
+    { text: "What does a scatterplot reveal about relationships?", options: ["Exact mathematical formula", "Direction, form, and strength of relationship between two quantitative variables", "Only outliers", "The mean of each variable"], correct: 1 },
+    { text: "Define correlation. How does a bubble plot extend a scatterplot?", options: ["Correlation measures slope; bubble plot adds a third categorical variable", "Correlation measures strength and direction of linear relationship; bubble plot adds marker size for a third quantitative variable", "Correlation is the same as covariance", "Bubble plot removes outliers"], correct: 1 },
+    { text: "What is a heatmap and when is it useful?", options: ["A bar chart with colors; useful for single variable", "A matrix of colors representing values; useful for visualizing correlation matrices or large multivariate data", "A contour plot", "A time series plot"], correct: 1 },
+    { text: "What is a time series plot? What does a QQ plot assess?", options: ["Time series shows data over time; QQ plot assesses if sample follows a theoretical distribution", "Both show correlations", "Time series is for categories", "QQ plot shows time trends"], correct: 0 },
+    { text: "Define multivariate data.", options: ["Data with one variable", "Data involving three or more variables per observation", "Only time series data", "Data without any structure"], correct: 1 },
+    { text: "Distinguish between a parameter and a statistic.", options: ["Parameter describes a sample; statistic describes a population", "Parameter describes a population; statistic describes a sample", "They are identical", "Parameter is visual; statistic is numerical"], correct: 1 },
+    { text: "What is likelihood in statistical estimation?", options: ["The probability of the data given a parameter value", "The probability of the parameter given the data", "The mean of the posterior", "The variance of the estimator"], correct: 0 },
+    { text: "Define point estimation, bias, and variance.", options: ["A single value estimate of a parameter; bias is expected difference from truth; variance is sampling variability", "An interval estimate; bias is the mean; variance is the range", "A graph of estimates", "Only used for classification"], correct: 0 },
+    { text: "What are the Method of Moments and Maximum Likelihood Estimation (MLE)?", options: ["Both are Bayesian methods", "Methods for estimating parameters: MoM matches sample moments; MLE maximizes likelihood", "Methods for data visualization", "Methods for hypothesis testing only"], correct: 1 },
+    { text: "What is a confidence interval and significance level?", options: ["Interval that contains the sample mean; significance level is the confidence level", "Range of plausible values for a parameter; significance level (α) is probability of Type I error", "The same as p-value", "Only used for proportions"], correct: 1 },
+    { text: "Define hypothesis testing, null hypothesis, and alternative hypothesis.", options: ["Proving a theory; null is what you want to prove; alternative is the opposite", "A procedure to decide between two statements; null is default/status quo; alternative is research hypothesis", "Only used for means", "The same as estimation"], correct: 1 },
+    { text: "What is a p-value? When are Z-test, t-test, and chi-square test used?", options: ["Probability the null is true; Z-test used for any sample size", "Probability of observing data as extreme if null is true; Z-test (known variance/large n), t-test (unknown variance/small n), chi-square (categorical)", "The same as alpha", "P-value is the test statistic"], correct: 1 },
+    { text: "Define Type I error, Type II error, and standard error.", options: ["Type I = false negative; Type II = false positive; standard error = standard deviation of sampling distribution", "Type I = false positive; Type II = false negative; standard error = standard deviation of a statistic", "Type I = correct rejection; Type II = incorrect acceptance", "They are synonyms"], correct: 1 },
+    { text: "Define supervised learning and distinguish between regression and classification.", options: ["Learning without labels; regression predicts categories; classification predicts numbers", "Learning from labeled data; regression predicts continuous output; classification predicts discrete class labels", "Learning from unlabeled data; both predict continuous outputs", "Only used for time series"], correct: 1 },
+    { text: "Differentiate predictor (feature) and response (target) variables.", options: ["Predictor is output; response is input", "Predictor is input variable; response is output variable to predict", "Both are the same", "Predictor is always categorical"], correct: 1 },
+    { text: "Compare quantitative and qualitative variables with examples.", options: ["Quantitative is categories (e.g., color); qualitative is numbers (e.g., height)", "Quantitative is numerical (e.g., age); qualitative is categorical (e.g., gender)", "Both are numerical", "Both are categorical"], correct: 1 },
+    { text: "Define labeled data, training set, validation set, and test set.", options: ["Labeled = data with true outputs; training set trains model; validation tunes; test evaluates", "Labeled = raw data; training = final test; validation = training; test = unused", "They are identical", "Only used for unsupervised learning"], correct: 0 },
+    { text: "Define overfitting and underfitting.", options: ["Overfitting = model too simple; underfitting = model too complex", "Overfitting = model learns noise; underfitting = fails to capture pattern", "Both mean perfect fit", "Overfitting is good; underfitting is bad"], correct: 1 },
+    { text: "Explain bias, variance, and the bias–variance tradeoff.", options: ["Bias = error from complexity; variance = error from simplicity", "Bias = error from wrong assumptions; variance = sensitivity to training data; tradeoff: decreasing one increases the other", "Both are always zero", "Tradeoff only for trees"], correct: 1 },
+    { text: "Define least squares estimation and residual error.", options: ["Minimizes sum of absolute residuals; residual = actual - predicted", "Minimizes sum of squared residuals; residual = actual - predicted", "Maximizes likelihood", "Minimizes median error"], correct: 1 },
+    { text: "Explain k-NN, including the role of k and distance metrics (Euclidean vs. Manhattan).", options: ["k = number of features; Euclidean = |x1-x2|; Manhattan = sqrt(sum squared)", "k = number of neighbors; Euclidean = sqrt(sum squared differences); Manhattan = sum of absolute differences", "k = number of classes; both metrics identical", "k = learning rate"], correct: 1 },
+    { text: "Define linear models and list assumptions of linear regression.", options: ["Independence, normality of predictors", "Linearity, independence of errors, homoscedasticity, normality of errors (for inference)", "No assumptions needed", "Only linearity"], correct: 1 },
+    { text: "Explain decision trees (splitting, leaf nodes, entropy, Gini index).", options: ["Split based on variance; leaf nodes are root nodes", "Recursive partitioning; leaf nodes final predictions; entropy/Gini measure impurity for splits", "Only used for regression", "No splitting involved"], correct: 1 },
+    { text: "Define ensemble learning: bagging, boosting, and random forest.", options: ["Single model", "Combining multiple models; bagging averages bootstrap models; boosting sequentially corrects errors; random forest = bagging + random feature subsets", "Only boosting is ensemble", "They are all decision trees"], correct: 1 },
+    { text: "Define confusion matrix and evaluation metrics (accuracy, precision, recall, F1-score).", options: ["2x2 matrix of predictions vs actual; accuracy = (TP+TN)/total; precision = TP/(TP+FP); recall = TP/(TP+FN); F1 = harmonic mean", "3x3 matrix", "Only for regression", "Same as covariance matrix"], correct: 0 },
+    { text: "Define simple and multiple linear regression.", options: ["Simple = one predictor, one response; multiple = multiple predictors, one response", "Simple = no intercept; multiple = intercept only", "Simple = categorical; multiple = numerical", "Both identical"], correct: 0 },
+    { text: "Explain subset selection methods (forward, backward, stepwise).", options: ["Forward starts with no predictors adding; backward starts with all removing; stepwise is combination", "Forward removes predictors; backward adds predictors", "Both same", "Not used in regression"], correct: 0 },
+    { text: "Define shrinkage and its purpose.", options: ["Increasing coefficient magnitude", "Shrinking coefficients toward zero to reduce variance and prevent overfitting", "Shrinking sample size", "Expanding feature space"], correct: 1 },
+    { text: "What is logistic regression and what does it estimate?", options: ["Linear regression for continuous output", "Classification method estimating probability of binary outcome via sigmoid function", "Regression for count data", "Time series model"], correct: 1 },
+    { text: "Define regularization parameter (λ) and coefficient shrinkage.", options: ["λ controls regularization; larger λ = more shrinkage", "λ controls learning rate", "λ is number of features", "λ is sample size"], correct: 0 },
+    { text: "Compare ridge and lasso; how does lasso perform feature selection?", options: ["Ridge uses L1 (zeros); lasso uses L2 (no zeros)", "Ridge uses L2 → coefficients rarely zero; lasso uses L1 → can shrink to zero → feature selection", "Both identical", "Neither performs selection"], correct: 1 },
+    { text: "A dataset has mean > median > mode. This suggests:", options: ["Negative skew", "Positive skew", "No skew", "Bimodal"], correct: 1 },
+    { text: "What does a QQ plot's S-shaped deviation indicate?", options: ["Perfect normality", "Heavy-tailed distribution", "Light tails", "No deviation"], correct: 1 },
+    { text: "Which method is robust to outliers for central tendency?", options: ["Mean", "Median", "Mode", "Range"], correct: 1 },
+    { text: "In cross-validation, higher folds generally lead to:", options: ["Higher bias", "Higher variance in estimate but less bias", "No change", "Underfitting"], correct: 1 },
+    { text: "Which is a non-parametric method?", options: ["Linear regression", "k-NN", "Ridge regression", "Lasso"], correct: 1 },
+    { text: "The bias-variance tradeoff is most directly about:", options: ["Model complexity vs. generalization error", "Data size vs. accuracy", "Training time vs. accuracy", "Number of features vs. overfitting"], correct: 0 }
   ];
-  const TOTAL_QS = 20;
+
+  // Helper: randomly select 20 unique questions from master
+  function getRandomQuestions(master, count = 20) {
+    const shuffled = [...master];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled.slice(0, count);
+  }
+
+  let currentQuizSet = [];      // stores the 20 randomly selected questions for this attempt
+  let TOTAL_QS = 20;
   const MAX_MARKS = 10;
 
-  // ==================== GOOGLE APPS SCRIPT URL (YOUR DEPLOYED WEB APP) ====================
-  const SHEET_API = "https://script.google.com/a/macros/outr.ac.in/s/AKfycbyYn6v-YPDqGPl9dJXNnXB0cNf3K4A6utcnXgx9OvLJCyriR2ZoxmNkZbnV4DAhMOkC/exec";
-
-  // state variables
   let student = { name: "", regNo: "", branch: "", year: "", email: "" };
-  let answers = new Array(TOTAL_QS).fill(null);
+  let answers = [];
   let currentIdx = 0;
   let quizActive = false;
   let submitted = false;
@@ -418,6 +459,9 @@
   const resultMsg = document.getElementById('resultDetailsMsg');
   const restartBtn = document.getElementById('restartQuizGlobal');
 
+  // Google Apps Script Web App URL (replace with your own)
+  const SHEET_API = "https://script.google.com/macros/s/AKfycbzXTLbirdCmuS5YQyOoF0xZQKd_8DvWQ_Tq0fiHUg96o_gaPnNRmJZbw8QrNRf8S87U/exec";
+
   function formatTime(sec) {
     let m = Math.floor(sec / 60);
     let s = sec % 60;
@@ -443,8 +487,8 @@
   }
 
   function renderCurrent() {
-    if(!quizActive) return;
-    const q = QUIZ_SET[currentIdx];
+    if(!quizActive || !currentQuizSet.length) return;
+    const q = currentQuizSet[currentIdx];
     questionTextDiv.innerText = q.text;
     optionsContainer.innerHTML = '';
     q.options.forEach((opt, idx) => {
@@ -486,10 +530,10 @@
     submitted = true;
     quizActive = false;
     let correctCount = 0;
-    for(let i=0;i<TOTAL_QS;i++) if(answers[i] !== null && answers[i] === QUIZ_SET[i].correct) correctCount++;
+    for(let i=0;i<TOTAL_QS;i++) if(answers[i] !== null && answers[i] === currentQuizSet[i].correct) correctCount++;
     const marksObtained = (correctCount * 0.5).toFixed(1);
     const percent = ((correctCount / TOTAL_QS)*100).toFixed(2);
-    let answerSummary = answers.map((ans,i)=>`Q${i+1}:${ans!==null?QUIZ_SET[i].options[ans]:"No Answer"}|${(ans!==null && ans===QUIZ_SET[i].correct)?"✓":"✗"}`).join(" ; ");
+    let answerSummary = answers.map((ans,i)=>`Q${i+1}:${ans!==null?currentQuizSet[i].options[ans]:"No Answer"}|${(ans!==null && ans===currentQuizSet[i].correct)?"✓":"✗"}`).join(" ; ");
     const payload = {
       fullName: student.name, regNumber: student.regNo, branch: student.branch, year: student.year, email: student.email,
       timestamp: new Date().toISOString(), correctAnswers: correctCount, totalQuestions: TOTAL_QS,
@@ -502,10 +546,10 @@
     resultMsg.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> Saving to Google Sheet...`;
     try {
       await fetch(SHEET_API, { method: 'POST', mode: 'no-cors', cache: 'no-cache', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      resultMsg.innerHTML = `✅ Recorded! Score: ${correctCount}/20 (${marksObtained}/10). Thank you, ${student.name}. Data saved in Google Sheet.`;
+      resultMsg.innerHTML = `✅ Recorded! Score: ${correctCount}/20 (${marksObtained}/10). Random set seeded. Thank you, ${student.name}.`;
     } catch(e) {
       console.error(e);
-      resultMsg.innerHTML = `⚠️ Local backup saved. Score: ${correctCount}/20 (${marksObtained}/10). Internet or script URL issue, but you can contact admin.`;
+      resultMsg.innerHTML = `⚠️ Local backup saved. Score: ${correctCount}/20 (${marksObtained}/10). Contact admin if needed.`;
       localStorage.setItem("quiz_backup_outr", JSON.stringify(payload));
     }
   }
@@ -516,6 +560,9 @@
       registerErr.innerText = "❌ All fields required & valid email address.";
       return;
     }
+    // Randomly select 20 unique questions for this student
+    currentQuizSet = getRandomQuestions(MASTER_QUIZ_SET, 20);
+    TOTAL_QS = currentQuizSet.length;
     student = { name, regNo: reg, branch, year, email };
     registerErr.innerText = "";
     answers = new Array(TOTAL_QS).fill(null);
@@ -525,15 +572,14 @@
     quizWarn.innerText = "";
   }
 
-  function restartFull() { stopGlobalTimer(); quizActive=false; submitted=false; registerPanel.classList.remove('hidden'); quizPanel.classList.add('hidden'); resultPanel.classList.add('hidden'); nameInp.value=""; regInp.value=""; branchInp.value=""; emailInp.value=""; registerErr.innerText=""; }
+  function restartFull() { stopGlobalTimer(); quizActive=false; submitted=false; registerPanel.classList.remove('hidden'); quizPanel.classList.add('hidden'); resultPanel.classList.add('hidden'); nameInp.value=""; regInp.value=""; branchInp.value=""; emailInp.value=""; registerErr.innerText=""; currentQuizSet = []; }
 
   startBtn.addEventListener('click', initQuiz);
   prevBtn.addEventListener('click', onPrev);
   nextBtn.addEventListener('click', onNext);
   submitFinal.addEventListener('click', () => { if(quizActive && !submitted) { let unanswered = answers.filter(a=>a===null).length; if(unanswered>0 && !confirm(`⚠️ ${unanswered} unanswered. Submit anyway?`)) return; submitQuizToSheet(false); } });
   restartBtn.addEventListener('click', restartFull);
-  totalQSpan.innerText = TOTAL_QS;
-  updateGlobalDisplay();
+  totalQSpan.innerText = "20";
 </script>
 </body>
 </html>
